@@ -1,0 +1,1 @@
+# jest-custom-reporter
