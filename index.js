@@ -1,12 +1,17 @@
-const { green, red, gray, cyan } = require('chalk');
 const {
-  testDuration
+  green,
+  red,
+  gray,
+  cyan,
+} = require('chalk');
+
+const {
+  testDuration,
 } = require('./lib/utils');
 
-const log = console.log;
+const { log } = console;
 
 class JestCustomReporter {
-
   constructor(globalConfig, options) {
     this._globalConfig = globalConfig;
     this._options = options;
@@ -19,10 +24,10 @@ class JestCustomReporter {
       numPendingTests,
       testResults,
       numTotalTests,
-      startTime
+      startTime,
     } = results;
 
-    testResults.map(({failureMessage}) => {
+    testResults.map(({ failureMessage }) => {
       if (failureMessage) {
         log(failureMessage);
       }
@@ -55,7 +60,7 @@ exports.symbols = {
   err: '✖',
   dot: '․',
   comma: ',',
-  bang: '!'
+  bang: '!',
 };
 
 module.exports = JestCustomReporter;
