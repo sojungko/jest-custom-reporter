@@ -36,12 +36,7 @@ class JestCustomReporter {
       return;
     }
     const { ancestorTitles, status, title } = testResults[resultsIndex];
-    // log('ancestorTitles', ancestorTitles);
     const currentTitle = ancestorTitles[titlesIndex];
-    // log('prevTitle', prevTitle);
-    // log('currentTitle', currentTitle);
-    // log('resultsIndex', resultsIndex);
-    // log('titlesIndex', titlesIndex);
 
     if (!ancestorTitles[titlesIndex]) {
       log(symbols(status), gray(title));
@@ -65,12 +60,10 @@ class JestCustomReporter {
       numPassedTests,
       numPendingTests,
       testResults,
-      // numTotalTests,
       startTime,
     } = results;
 
     testResults.forEach(({ testFilePath, testResults, failureMessage }) => {
-      // log(`Results for running tests on ${testFilePath}`);
       this.recursivelyReport(testFilePath, testResults, 0, 0);
 
       if (failureMessage) {
@@ -93,13 +86,6 @@ class JestCustomReporter {
   }
 }
 
-// symbols = {
-//   passed: '✓',
-//   pending: '-',
-//   err: '✖',
-//   dot: '․',
-//   comma: ',',
-//   bang: '!',
-// };
+
 
 module.exports = JestCustomReporter;
