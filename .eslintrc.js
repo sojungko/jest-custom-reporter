@@ -9,6 +9,7 @@ module.exports = {
   "rules": {
     "class-methods-use-this": ["off"],
     "func-names": ["off"],
+    "prefer-destructuring": ["off"],
     "no-shadow": ["off"],
     "no-param-reassign": ["off"],
     "no-plusplus": ["off"],
