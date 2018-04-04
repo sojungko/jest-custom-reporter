@@ -7,8 +7,8 @@ const {
 } = require('chalk');
 
 const {
-  testDuration,
-  symbols,
+  duration,
+  symbol,
 } = require('./lib/utils');
 
 const { log } = console;
@@ -39,17 +39,17 @@ class JestCustomReporter {
     const currentTitle = ancestorTitles[titlesIndex];
 
     if (!ancestorTitles[titlesIndex]) {
-      log(symbols(status), gray(title));
+      log(symbol(status), gray(title));
       this.recursivelyReport(currentTitle, testResults, ++resultsIndex, titlesIndex);
       return;
     }
     if (prevTitle !== currentTitle) {
       log(white(currentTitle));
-      log(symbols(status), gray(title));
+      log(symbol(status), gray(title));
       this.recursivelyReport(currentTitle, testResults, ++resultsIndex, ++titlesIndex);
       titlesIndex--;
     } else {
-      log(symbols(status), gray(title));
+      log(symbol(status), gray(title));
       this.recursivelyReport(currentTitle, testResults, ++resultsIndex, titlesIndex);
     }
   }
@@ -75,7 +75,7 @@ class JestCustomReporter {
     if (numPassedTests) {
       const end = new Date();
       const start = new Date(startTime);
-      log(green(`${numPassedTests} passing`), gray(`(${testDuration(end, start)})`));
+      log(green(`${numPassedTests} passing`), gray(`(${duration(end, start)})`));
     }
     if (numFailedTests) {
       log(red(`${numFailedTests} failing`));
