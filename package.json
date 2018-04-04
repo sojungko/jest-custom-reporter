@@ -3,6 +3,9 @@
   "version": "1.0.2",
   "description": "Custom reporter for Jest",
   "main": "index.js",
+  "engines": {
+    "node": "^8.4.0"
+  },
   "scripts": {
     "lint": "eslint --ignore-path .gitignore '**/*.js'",
     "test": "jest"
@@ -32,7 +35,8 @@
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "husky": "^0.14.3",
-    "jest": "^22.4.3"
+    "jest": "^22.4.3",
+    "semantic-release": "^15.1.5"
   },
   "dependencies": {
     "chalk": "^2.3.2"
