@@ -44,7 +44,7 @@ class JestCustomReporter {
 
     if (!currentTitle) {
       // if past the end of ancestorTitles, go back one index
-      this.recursivelyReport(prevTitle, testResults, resultsIndex, --titlesIndex)
+      this.recursivelyReport(prevTitle, testResults, resultsIndex, --titlesIndex);
       return;
     }
 

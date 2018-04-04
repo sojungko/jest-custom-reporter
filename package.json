@@ -7,8 +7,11 @@
     "node": "^8.4.0"
   },
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore '**/*.js'",
-    "test": "jest"
+    "lint": "eslint '**/*.js'",
+    "test": "jest",
+    "precommit": "npm run lint",
+    "prepush": "npm test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
