@@ -32,23 +32,28 @@ class JestCustomReporter {
  * @param {Number} level
  */
   recursivelyReport(prevTitle, testResults, resultsIndex, titlesIndex) {
-    if (!testResults[resultsIndex]) {
+    const testResult = testResults[resultsIndex];
+
+    if (!testResult) {
+      // exit at end of testResults array
       return;
     }
-    const { ancestorTitles, status, title } = testResults[resultsIndex];
+
+    const { ancestorTitles, status, title } = testResult;
     const currentTitle = ancestorTitles[titlesIndex];
 
-    if (!ancestorTitles[titlesIndex]) {
-      log(symbol(status), gray(title));
-      this.recursivelyReport(currentTitle, testResults, ++resultsIndex, titlesIndex);
+    if (!currentTitle) {
+      // if past the end of ancestorTitles, go back one index
+      this.recursivelyReport(prevTitle, testResults, resultsIndex, --titlesIndex)
       return;
     }
-    if (prevTitle !== currentTitle) {
+
+    if (prevTitle !== currentTitle && titlesIndex < ancestorTitles.length) {
+      // if new title encountered and not yet at the end of ancestorTitles, check next ancestorTitle
       log(white(currentTitle));
-      log(symbol(status), gray(title));
-      this.recursivelyReport(currentTitle, testResults, ++resultsIndex, ++titlesIndex);
-      titlesIndex--;
+      this.recursivelyReport(currentTitle, testResults, resultsIndex, ++titlesIndex);
     } else {
+      // otherwise log actual test and go onto next test
       log(symbol(status), gray(title));
       this.recursivelyReport(currentTitle, testResults, ++resultsIndex, titlesIndex);
     }

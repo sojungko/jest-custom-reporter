@@ -5,5 +5,4 @@ module.exports = {
   reporters: [
     './index',
   ],
-  // setupTestFrameworkScriptFile: '<rootDir>/test/config/unit-setup',
 }
