@@ -1,6 +1,6 @@
 {
   "name": "jest-custom-reporter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Custom reporter for Jest",
   "main": "index.js",
   "engines": {
@@ -19,7 +19,7 @@
     "reporter"
   ],
   "author": "Sojung Park",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sojungko/jest-custom-reporter/issues"
   },

@@ -8,7 +8,7 @@ const {
 
 const {
   duration,
-  symbol,
+  formatTitle,
 } = require('./lib/utils');
 
 const { log } = console;
@@ -26,10 +26,10 @@ class JestCustomReporter {
 
   /**
  *
- * @param {String} currentTitle
+ * @param {String} prevTitle
  * @param {Array} testResults
- * @param {Number} index
- * @param {Number} level
+ * @param {Number} resultsIndex
+ * @param {Number} titlesIndex
  */
   recursivelyReport(prevTitle, testResults, resultsIndex, titlesIndex) {
     const testResult = testResults[resultsIndex];
@@ -54,7 +54,7 @@ class JestCustomReporter {
       this.recursivelyReport(currentTitle, testResults, resultsIndex, ++titlesIndex);
     } else {
       // otherwise log actual test and go onto next test
-      log(symbol(status), gray(title));
+      log(formatTitle(status, title));
       this.recursivelyReport(currentTitle, testResults, ++resultsIndex, titlesIndex);
     }
   }
@@ -90,7 +90,5 @@ class JestCustomReporter {
     }
   }
 }
-
-
 
 module.exports = JestCustomReporter;
