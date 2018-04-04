@@ -16,7 +16,9 @@
   },
   "keywords": [
     "jest",
-    "reporter"
+    "reporter",
+    "test",
+    "tdd"
   ],
   "author": "Sojung Park",
   "license": "MIT",
@@ -25,6 +27,7 @@
   },
   "homepage": "https://github.com/sojungko/jest-custom-reporter#readme",
   "devDependencies": {
+    "commitizen": "^2.9.6",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-standard": "^11.0.0",

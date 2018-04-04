@@ -1,0 +1,9 @@
+.vscode
+examples
+.eslintrc.js
+.nvmrc
+jest.config.js
+yarn.lock
+*.log
+
+*.test.js
