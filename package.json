@@ -7,12 +7,13 @@
     "node": "^8.4.0"
   },
   "scripts": {
+    "bump": "yarn version && npm publish",
     "cm": "git-cz",
     "lint": "eslint '**/*.js'",
     "test": "jest",
     "precommit": "npm run lint",
     "prepush": "npm test",
-    "semantic-release": "semantic-release && npm publish"
+    "release": "semantic-release && npm publish"
   },
   "repository": {
     "type": "git",
