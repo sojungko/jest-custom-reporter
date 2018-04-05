@@ -1,6 +1,6 @@
 {
   "name": "jest-custom-reporter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Custom reporter for Jest",
   "main": "index.js",
   "engines": {
