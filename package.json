@@ -7,11 +7,12 @@
     "node": "^8.4.0"
   },
   "scripts": {
+    "cm": "git-cz",
     "lint": "eslint '**/*.js'",
     "test": "jest",
     "precommit": "npm run lint",
     "prepush": "npm test",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release && npm publish"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   "homepage": "https://github.com/sojungko/jest-custom-reporter#readme",
   "devDependencies": {
     "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-standard": "^11.0.0",
@@ -46,5 +48,10 @@
   },
   "dependencies": {
     "chalk": "^2.3.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
