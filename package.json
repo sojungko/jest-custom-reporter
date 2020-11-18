@@ -45,7 +45,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "husky": "^0.14.3",
     "jest": "^22.4.3",
-    "semantic-release": "^15.1.5"
+    "semantic-release": "^17.2.3"
   },
   "dependencies": {
     "chalk": "^2.3.2"
